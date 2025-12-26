@@ -47,7 +47,7 @@ To set up Google Kubernetes Engine (**GKE**), open the console of the project yo
 1. Set the default compute zone to **northamerica-northeast1-b**
    
    ```cmd
-   gcloud config set compute/zone northamerica-northeast1-b  
+   gcloud config set compute/zone northamerica-northeast2-a  
    ```
     
 2. Enable GKE by searching for **Kubernetes Engine**. Select **Kubernetes Engine API**. Then, click **Enable**.
