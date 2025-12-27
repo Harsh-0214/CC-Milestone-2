@@ -549,31 +549,18 @@ kubectl delete -f redis.yaml
 * What's the different of Source and Sink connectors?
 * What's the applications of the connectors?
 
-## Design: 
-We will contine using the same dataset used in the first milestone. However, we will use the Whole dataset, not only the CSV file. The dataset:
-* can be accessed from  [https://github.com/GeorgeDaoud3/SOFE4630U-Design](https://github.com/GeorgeDaoud3/SOFE4630U-Design)
-* contains a folder, **Dataset_Occluded_Pedestrian**, of images
-* contains the **Labels.csv** file, you used in the first milestone.
-
-You needed to 
-* create two topics one for the records of the CSV file and the other for the images.
-* Deploy a MySQL server and create an empty table within it to accomidate the records of the CSV file.
-* Create an application integration to automatically store the records published in the topic into the MySQL database.
-* Use the same script, we written in the first milestone to publish the messages into the topic.
-* Deploy a Redis server to store the images.
-* Create an application integration to automatically store the images published in the other topic into the Redis datastorage.
-* Write a python script that will publish the images to the topic. The script should
-   * Read search for all the images in the folder.
-   * For each image
-      * Read the image.
-      * Serialize it.
-      * Publish the message into the topic using the image name as the message key and the serialized image as the message value.
-
-
-# Deliverables
-1. A GitHub link to the scripts used in the Design part.
-2. A report that includes the discussion and the design parts.
-3. An audible video of about 5 minutes showing the configuration, execution and outputs of the MySQL sink connector, and Redis Connectors. 
-4. An audible video of about 5 minutes showing the design part. The video should include proofs of the successful integration of the Cloud Pub/Sub with the connectors.
-
-Put the GitHub link and video links inside your report, and submit the report.
+## Design
+In the previous milestone, you have sent the smart meter readings to Google Pub/Sub. It's needed to add a Dataflow job to preprocess the smart meter measurements. The job consists of the following stages
+1. **Read from PubSub**: read the measurement reading .
+2. **Filter**: Eliminate records with missing measurements (containing None). 
+3. **Convert**:  convert  the  pressure  from  kPa  to  psi  and  the  temperature  from  Celsius  to  Fahrenheit using the following equations 
+    
+    𝑃(𝑝𝑠𝑖) = 𝑃(𝑘𝑃𝑎)/6.895
+    
+    𝑇(𝐹) = 𝑇(𝐶)∗1.8+32
+4. **Write to PubSub**: send the measurement back to another topic
+ 
+## Deliverables
+1. A report that includes the discription of the second wordcount example (**wordcount2.py**) and the pipeline you used in the Design section. It should have snapshots of the job and results of the four examples (wordcount and mnist) as well as the design part.
+2. An audible video of about 4 minutes showing the created job and the results of the four examples (wordcount and mnist).
+3. Another audible video of about 3 minutes showing the design part.
