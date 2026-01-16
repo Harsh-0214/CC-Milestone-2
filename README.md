@@ -564,3 +564,6 @@ In the previous milestone, you have sent the smart meter readings to Google Pub/
 1. A report that includes the discription of the second wordcount example (**wordcount2.py**) and the pipeline you used in the Design section. It should have snapshots of the job and results of the four examples (wordcount and mnist) as well as the design part.
 2. An audible video of about 4 minutes showing the created job and the results of the four examples (wordcount and mnist).
 3. Another audible video of about 3 minutes showing the design part.
+
+## Acknowledgements
+This repository is a fork of [zubxxr/SOFE4630U-MS2](https://github.com/zubxxr/SOFE4630U-MS2) , originally based on [GeorgeDaoud3/SOFE4630U-MS2](https://github.com/GeorgeDaoud3/SOFE4630U-MS2) . Credit to the original author(s) for the initial implementation.
