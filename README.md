@@ -8,7 +8,7 @@
 * Create and configure connectors from Google Pub/Sub to Redis server.
 
 ## Repository:
-[https://github.com/zubxxr/SOFE4630U-MS2](https://github.com/zubxxr/SOFE4630U-MS2)
+[https://github.com/MohammadYasserZaki/SOFE4630U-MS2](https://github.com/MohammadYasserZaki/SOFE4630U-MS2)
 
 ## Table of Contents
 
